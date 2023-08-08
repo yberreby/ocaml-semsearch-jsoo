@@ -16,7 +16,4 @@ fi
 
 python export.py \
     --model-id "sentence-transformers/all-MiniLM-L6-v2" \
-    --out-dir ../exported \
-    --max-tokens 128
-
-deactivate
+    --out-dir ../exported

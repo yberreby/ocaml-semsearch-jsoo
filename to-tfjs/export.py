@@ -3,14 +3,9 @@ import subprocess
 from pathlib import Path
 from transformers import AutoTokenizer
 from model import TFSentenceTransformer
+import tensorflow as tf
 
 parser = argparse.ArgumentParser()
-parser.add_argument(
-    "--max-tokens",
-    type=int,
-    default=128,
-    help="Max sequence length, including start and end tokens",
-)
 parser.add_argument(
     "--model-id",
     type=str,
@@ -19,6 +14,28 @@ parser.add_argument(
 )
 parser.add_argument("--out-dir", type=Path, default="exported/")
 args = parser.parse_args()
+
+
+def build_transformer(model_name_or_path, **kwargs):
+    input_ids = tf.keras.layers.Input(shape=(None,), dtype=tf.int32, name="input_ids")
+    attention_mask = tf.keras.layers.Input(
+        shape=(None,), dtype=tf.int32, name="attention_mask"
+    )
+    token_type_ids = tf.keras.layers.Input(
+        shape=(None,), dtype=tf.int32, name="token_type_ids"
+    )
+    transformer = TFSentenceTransformer(model_name_or_path, **kwargs)
+    embeddings = transformer(
+        {
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "token_type_ids": token_type_ids,
+        }
+    )
+    model = tf.keras.Model(
+        inputs=[input_ids, attention_mask, token_type_ids], outputs=embeddings
+    )
+    return model
 
 
 if __name__ == "__main__":
@@ -36,23 +53,12 @@ if __name__ == "__main__":
         d.mkdir(parents=True, exist_ok=True)
     sm_out_path, js_out_path = map(lambda d: d / model_id_path_friendly, dirs)
 
-    print(f"Exporting {model_id} to {sm_out_path} with max_tokens={args.max_tokens}")
+    print(f"Exporting {model_id} to {sm_out_path}")
     print()
 
     print("Loading model")
-    st = TFSentenceTransformer(model_id)
+    st = build_transformer(model_id)
     tokenizer = AutoTokenizer.from_pretrained(model_id)
-
-    print("Running model on dummy input to infer shape")
-    # Don't count START and END, hence -2
-    payload = "@ " * (args.max_tokens - 2)
-    inputs = tokenizer([payload], padding=True, truncation=True, return_tensors="tf")
-    inputs = {
-        "input_ids": inputs["input_ids"].numpy(),
-        "token_type_ids": inputs["token_type_ids"].numpy(),
-        "attention_mask": inputs["attention_mask"].numpy(),
-    }
-    embeddings = st(inputs)
 
     print(f"Exporting to TensorFlow SavedModel: {sm_out_path}")
     st.save(sm_out_path, save_format="tf")
