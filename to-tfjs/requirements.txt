@@ -1,0 +1,4 @@
+transformers[tf]
+sentence-transformers
+tensorflowjs
+numpy
