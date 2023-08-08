@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.9.0",
+    "@tensorflow/tfjs-node": "^4.9.0",
+    "bert-tokenizer": "^1.1.8"
+  }
+}
