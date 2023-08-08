@@ -50,7 +50,7 @@ dune test
 - Bind to [[https://github.com/huggingface/candle][huggingface/candle]], which can target WASM, and has support for BERT.
   This would remove the need for the ugly Torch -> TF -> TFJS conversion.
   It also has the benefit of enabling portability to native code, though that would require binding twice (once through FFI, once through JSOO).
-- Approximate Nearest Neighbor search algorithms instead of a linear search.
+- Approximate Nearest Neighbor search algorithms instead of a linear search. Note that in practice, optimized, vectorized linear search is _very_ fast (4-16ms for a few thousand entries). This is only necessary when scaling up dramatically or with tight real-time constraints.
 
 * Acknowledgements
 Thanks to Philipp Schmid for [[https://www.philschmid.de/tensorflow-sentence-transformers][his article on converting Sentence Transformers to TensorFlow]].
