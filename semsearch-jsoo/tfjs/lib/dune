@@ -1,0 +1,6 @@
+(library
+ (name tfjs)
+ (public_name tfjs)
+ (libraries js_of_ocaml lwt js_of_ocaml-lwt base)
+ (preprocess
+  (pps js_of_ocaml-ppx)))

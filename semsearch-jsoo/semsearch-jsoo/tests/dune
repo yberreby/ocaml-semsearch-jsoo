@@ -1,0 +1,23 @@
+(executable
+ (name jsoo)
+ (modules jsoo)
+ (modes js)
+ (libraries
+  semsearch-jsoo
+  tfjs
+  sbert-jsoo
+  fmt
+  js_of_ocaml
+  js_of_ocaml-lwt
+  lwt
+  base
+  unix ; WHY?
+  )
+ (preprocess
+  (pps js_of_ocaml-ppx lwt_ppx)))
+
+(rule
+ (alias runtest)
+ (deps test_tasks.txt)
+ (action
+  (run node %{dep:jsoo.bc.js})))

@@ -1,0 +1,38 @@
+#+title: ocaml-semsearch-jsoo
+
+OCaml + [[https://github.com/ocsigen/js_of_ocaml][js_of_ocaml]] + [[https://www.sbert.net/][SBERT]] + [[https://www.tensorflow.org/js/][TensorFlow.js]].
+
+* Requirements
+- opam
+- yarn
+- python
+
+* Usage
+** Set up
+#+begin_src bash
+# Export a SBERT model to TensorFlow.js
+./export_model.sh
+
+# Install Node dependencies
+yarn
+
+# Set up opam switch
+opam switch create . ocaml.4.14.1 --no-install --yes
+
+# Install dev dependencies
+opam install ocaml-lsp-server merlin --yes
+
+# Install main dependencies
+cd semsearch-jsoo
+opam install . --deps-only --yes --with-test
+#+end_src
+
+** Try it out
+#+begin_src bash
+# in semsearch-jsoo
+dune test
+#+end_src
+
+* Acknowledgements
+Thanks to Philipp Schmid for [[https://www.philschmid.de/tensorflow-sentence-transformers][his article on converting Sentence Transformers to TensorFlow]].
+

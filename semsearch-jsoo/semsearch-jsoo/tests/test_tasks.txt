@@ -1,0 +1,409 @@
+Absorb knowledge on proj. management strat.
+Adopt a pet
+Arrange an e-conference for project review
+Arrange project meet
+Assemble IKEA furniture
+Assignment submission
+Attend AI webinar
+Attend a comedy show
+Attend a magic show
+Attend a music festival
+Attend a networking event
+Attend a pottery workshop
+Attend a theater show
+Attend a workshop on photography
+Attend parent-teacher meeting
+Attend seminar at McGill University
+Attend webinar on computational neuroscience
+Attend weekly team meeting
+Attend yoga class
+Bake a cherry pie
+Bank visit
+Bathroom clean-up
+Bedroom painting
+Birthday bash organization
+Birthday gift shopping
+Book a luxury hotel stay
+Book a slot with the tooth fairy
+Book a spa day
+Book doctor's visit
+Book flight tickets to Berlin
+Book hair salon appointment
+Book tickets for Coldplay concert
+Book tickets for theatre
+Bookshelf arrangement
+Brainstorm ideas for new startup
+Breakfast preparation
+Budget meeting blueprint
+Budget plan creation
+Build a treehouse for kids
+Business journey organization
+Business proposal creation
+Buy a new camera
+Buy a new gadget
+Buy a new handbag
+Buy a new musical instrument
+Buy a new pair of shoes
+Buy concert tickets
+Buy groceries
+Buy organic vegetables
+Buy plants for the house
+Call Mario the plumber
+Call Sarah about project
+Call to customer service
+Call to pizza delivery
+Car washing
+Charity event planning
+Check out new Netflix series
+Check out new arrivals at Zara
+Check out new articles at Arxiv
+Clean the attic
+Client database creation
+Client invoice dispatch
+Client site visit
+Closet organization
+Clothes shopping
+Complete an online course
+Complete coding ass. for AI coursework
+Complete lab work for research
+Complete reading on reinforcement learning
+Compose a new music track
+Compose mail to squad re: next sprint
+Compose monthly newsletter
+Compose plan for biweekly group chat
+Compose poetry
+Compose weekly blog post
+Conduct a customer survey
+Conduct a seminar
+Conduct a workshop
+Confirm client meeting
+Contract finalisation
+Cook a gourmet dinner
+Create a family tree
+Create a photo album
+Create a scrapbook
+Create an art portfolio
+Credit card bill payment
+Dance class attendance
+Debugging Rust code
+Decorate a cake
+Decorate for the holidays
+Design a calendar
+Design a mobile app
+Design a mural
+Design a new logo
+Design a poster
+Design a t-shirt
+Design a website layout
+Design greeting cards
+Design jewelry
+Design new product packaging
+Design proj. dashboard
+Develop a new mobile game
+Dinner preparation
+Discuss new software features
+Do a digital detox
+Donate to a charity
+Draft contract for client
+Edit and publish podcast episode
+Electricity bill payment
+Email inbox check
+Employee handbook update
+End ML class coding task
+End perusing research article
+End project charter
+Engage with new strat. book
+Enroll in a pottery class
+Enroll kids in summer camp
+Establish a virtual meet for project chit-chat
+Exam study session
+Experiment with 3D printing
+Explore a new city
+Explore local wildlife
+File annual revenue docs
+Fin. report review
+Finalize marketing campaign
+Finish AI coursework
+Finish reading 'War and Peace'
+First draft of design proposal
+Follow up on sales leads
+French study session
+Full review of academic write-up
+Garage door repair
+Garden flowers plantation
+Get in touch with sparky for light fix
+Go bird watching
+Go camping
+Go fishing
+Go for Python workshop
+Go for a long walk
+Go for a swim
+Go hiking in national park
+Go horseback riding
+Go ice-skating
+Go kayaking
+Go mountain biking
+Go on a boat ride
+Go on a ghost tour
+Go on a nature trail
+Go on a road trip
+Go on a safari
+Go on a shopping spree
+Go rock climbing
+Go roller-skating
+Go snorkeling
+Go to Auchan for grocery shopping
+Go to a ballet
+Go to a jazz club
+Go zip-lining
+Google Drive clean up
+Grocery run
+Grocery shopping for the week
+Health checkup planning
+Hiking trip planning
+Holiday planning for fam trip to Italy
+Holiday trip planning
+Home office setup
+Home renovation planning
+Host a barbecue
+Host a board game night
+Host a brunch
+Host a garage sale
+Host a movie marathon
+Host a picnic
+Host a webinar on cloud computing
+Hotel booking for vacay
+House vacuuming
+Inspect house for repairs
+Install new OS update
+Install new software updates
+Insurance policy review
+Interview potential hires
+Invoice creation
+Italian getaway planning
+Join a book club
+Join a community choir
+Join a dance troupe
+Join a gym
+Kitchen cleaning
+Knitting project completion
+Laundry pick-up
+Laundry session
+Lawn mowing
+Learn Espanol
+Learn a new dance form
+Learn a new instrument
+Learn a new language
+Learn calligraph
+LinkedIn profile update
+Living room paint job
+Logo design for the company
+Look through annual business performance
+Market report - check
+Marketing event planning
+Marketing plan creation
+Meal prep
+Meet John for coffee
+Meet client at Starbucks
+Meet supervisor for project update
+Meeting minutes draft
+Modify task tracker w/ the newest updates
+Monitor stock portfolio
+Movie night
+Museum visit
+Networking event attendance
+New equipment ordering
+New playlist creation
+New shoes shopping
+New tree plantation
+Obtain foodstuff for next 7 days
+Office decoration
+Office supplies ordering
+Order files in GDrive
+Order office supplies
+Organise files on laptop
+Organize a local meetup
+Organize digital photos
+Organize office workspace
+Paint the bedroom
+Participate in a debate
+Participate in a hackathon
+Participate in a local theater
+Participate in a marathon
+Participate in a parade
+Participate in a quiz night
+Perform routine car maintenance
+Pet food preparation
+Phone bill payment
+Photo album creation
+Photograph the city skyline
+Piano practice session
+Plan a day trip
+Plan a surprise date
+Plan a surprise party
+Plan family vacation
+Plan team bonding event
+Plant a tree
+Plant flowers in the garden
+Play a musical instrument
+Play a sport
+Play board games
+Play golf
+Play video games
+Plot business journey to Roma
+Portfolio creation
+Potluck dinner arrangement
+Prep financial presentation
+Prepare for exam in mathematical neuroscience
+Prepare for meet with MILA
+Prepare for presentation at work
+Prepare for upcoming marathon
+Prepare lecture for Monday class
+Prepare legal docs
+Prepare marketing strategy for Q4
+Prepare monthly bulletin
+Prepare presentation slides
+Prepare tax returns
+Prepare thesis proposal
+Prepare training materials
+Prepare weekly team meeting agenda
+Presentation prep for Monday's meet
+Press release composition
+Product launch planning
+Project timeline creation
+Project tool refresh
+Project update dispatch
+Python learning session
+Quality check of product
+Rapport finalisation for next week's rendezvous
+Reach out to Mario the plumber about sink
+Read a biography
+Read a classic novel
+Read a scientific journal
+Read book on Julia for scientific computing
+Read novel
+Rearrange docs in Dropbox
+Record a song cover
+Redesign the living room
+Refactor codebase
+Renew library books
+Renew library membership
+Renovate bathroom
+Repair the bicycle
+Replant the garden bed
+Research latest AI trends
+Research paper review
+Research travel destinations
+Reserve dinner at Le Jules Verne
+Resume update
+Revamp proj. management tool w/ fresh changes
+Review code changes
+Review financial statements
+Revise methodologies in proj. management
+Run batched AI experiments on SLURM cluster
+Run eyes over Q3 financial report
+Run marketing campaign
+Sales plan revision
+Schedule vet visit for Fido
+Schedule workout session at PureGym
+Scribble email to crew about future sprint
+Send final draft to Prof. Stephen
+Send invitations for fundraiser
+Send latest updates to Routine team
+Send off the tax return form
+Set up a new workspace
+Set up agenda for the team's weekly meetup
+Set up an appointment with tax consultant
+Sew a new outfit
+Shop for winter clothing
+Slot doctor's appointment
+Software product testing
+Software update installation
+Start a DIY project
+Start a YouTube channel
+Start a book exchange club
+Start a journal
+Start a new hobby
+Start a podcast
+Start a vegetable garden
+Start writing a new book
+Strategy talk slotting
+Study ancient history
+Study for final exam
+Study latest papers in Neuro-AI
+Study latest research papers in neuro-AI
+Study quantum physics chapter
+Submit grant proposal
+Submit paper to ICLR conference
+Sunday brunch preparation
+Surprise party planning
+Take a baking class
+Take a hot air balloon ride
+Take a meditation class
+Take a painting class
+Take a pilates class
+Take a pottery workshop
+Take a salsa class
+Take a scenic drive
+Take a weekend retreat
+Takeout ordering
+Taking out the trash
+Tax return submission
+Team email draft
+Tech conference attendance
+Thank you notes dispatch
+Train for a triathlon
+Train tickets booking for travel
+Translate document to Spanish
+Travel arrangement for next trip
+Try a new hairstyle
+Try a new recipe
+Try kite surfing
+Try wine tasting
+Tune piano
+Update project roadmap
+Visit New York for tech conference
+Visit a botanical garden
+Visit a butterfly garden
+Visit a carnival
+Visit a flea market
+Visit a historical site
+Visit a museum
+Visit a new restaurant
+Visit a planetarium
+Visit a spa
+Visit a theme park
+Visit a vineyard
+Visit a zoo
+Visit an antique store
+Visit an art gallery
+Visit an observatory
+Visit an old friend
+Visit dentist for check-up
+Visit grandparents
+Visit library for reference books
+Visit local farmers' market
+Visit museum for Picasso exhibition
+Visit pet shop for cat food
+Volunteer at a shelter
+Warehouse inventory check
+Watch a documentary
+Watch a live sports match
+Watch a new movie release
+Watch a theatrical play
+Watch an opera
+Watch the sunset at the beach
+Watering plants
+Webinar host
+Website update
+Window washing
+Workout schedule preparation
+Write a blog post
+Write a film review
+Write a letter to a friend
+Write a play
+Write a research paper
+Write a short story
+Write an op-ed for local newspaper
+Write thank you notes
+Yoga study

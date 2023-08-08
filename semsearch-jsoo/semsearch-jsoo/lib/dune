@@ -1,0 +1,4 @@
+(library
+ (name semsearch_jsoo)
+ (public_name semsearch-jsoo)
+ (libraries js_of_ocaml tfjs sbert-jsoo))

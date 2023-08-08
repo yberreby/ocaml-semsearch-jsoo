@@ -1,0 +1,6 @@
+(library
+ (name sbert_jsoo)
+ (public_name sbert-jsoo)
+ (libraries tfjs js_of_ocaml lwt js_of_ocaml-lwt base)
+ (preprocess
+  (pps js_of_ocaml-ppx)))

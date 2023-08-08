@@ -1,0 +1,49 @@
+(lang dune 3.0)
+
+(name semsearch-jsoo)
+
+(version 0.0.1)
+
+(generate_opam_files true)
+
+(license GPL-3.0-or-later)
+
+(authors "yberreby <yberreby@pm.me>")
+(maintainers "yberreby <yberreby@pm.me>")
+
+(package
+ (name semsearch-jsoo)
+ (synopsis "Semantic search in OCaml for JSOO")
+ (depends
+   tfjs
+   sbert-jsoo))
+
+(package
+ (name tfjs)
+ (synopsis "TensorFlow.js bindings")
+ (depends
+  (ocaml
+   (>= 4.14.1))
+    owl
+    base
+    fmt
+    lwt_ppx
+    js_of_ocaml
+    js_of_ocaml-ppx
+    js_of_ocaml-lwt
+))
+
+(package
+ (name sbert-jsoo)
+ (synopsis "SBERT inference")
+ (depends
+  (ocaml
+   (>= 4.14.1))
+    owl
+    base
+    fmt
+    lwt_ppx
+    js_of_ocaml
+    js_of_ocaml-ppx
+    js_of_ocaml-lwt
+))
