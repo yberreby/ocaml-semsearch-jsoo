@@ -1,4 +1,5 @@
 let test_root = Sys.getcwd ()
+
 (* FIXME: there has to be a better way than this horror *)
 let root = test_root ^ "../../../../../"
 
@@ -49,8 +50,7 @@ let f () =
 
   let start = cur_s () in
   let encoded_sentences = Sbert_jsoo.SBERT.encode model tokenizer sentences in
-  Fmt.pr "Encoded %d sentences in %.3fs\n"
-    (List.length sentences)
+  Fmt.pr "Encoded %d sentences in %.3fs\n" (List.length sentences)
     (cur_s () -. start);
 
   let find_with_query base_sentence =
@@ -58,8 +58,7 @@ let f () =
     let base_encoded =
       Sbert_jsoo.SBERT.encode model tokenizer [ base_sentence ]
     in
-    Fmt.pr "Encoded \"%s\" in %.3fs\n" base_sentence
-      (cur_s () -. start);
+    Fmt.pr "Encoded \"%s\" in %.3fs\n" base_sentence (cur_s () -. start);
     Fmt.pr "\nQuery: %s; top matches:\n" base_sentence;
     let start_search = cur_s () in
     let similarities =
@@ -72,8 +71,7 @@ let f () =
         Fmt.pr " '%s' with similarity %.2f\n" sentences.(i) similarity)
       (top_n 3 similarities);
     let end_search = cur_s () in
-    Fmt.pr "Searched in %.3fs\n"
-      (end_search -. start_search)
+    Fmt.pr "Searched in %.3fs\n" (end_search -. start_search)
   in
 
   Base.List.iter test_queries ~f:find_with_query;
