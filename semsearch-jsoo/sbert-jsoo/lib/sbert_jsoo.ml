@@ -11,7 +11,6 @@ module SBERT : sig
 
   val encode : Tfjs.model -> Tokenizer.t -> string list -> Tfjs.Tensor.t
 end = struct
-  let max_sequence_length = 128
   let start_token_id = 101
   let end_token_id = 102
 
@@ -31,23 +30,9 @@ end = struct
       |> Js.to_array
   end
 
-  let pad_to_max (tokens : int Array.t) =
-    let l : int = Array.length tokens in
-    let pad_size = max_sequence_length - l - 2 in
-    (* Reject negative pad size *)
-    if pad_size < 0 then failwith "Input sequence too long"
-    else
-      let pad = Stdlib.Array.make pad_size 0 in
-      Array.concat
-        [
-          Stdlib.Array.make 1 start_token_id;
-          tokens;
-          Stdlib.Array.make 1 end_token_id;
-          pad;
-        ]
-
   let create_tensors (tokens_batch : int Array.t Array.t) =
     let batch_size = Array.length tokens_batch in
+    let max_sequence_length = Array.get tokens_batch 0 |> Array.length in
     let shape = [| batch_size; max_sequence_length |] in
     let input_ids =
       Tfjs.tensor2d
@@ -67,12 +52,33 @@ end = struct
     in
     (input_ids, token_type_ids, attention_mask)
 
+  let pad_tokens ~max_length (tokens : int Array.t) =
+    let l : int = Array.length tokens in
+    let pad_size = max_length - l in
+    if pad_size < 0 then failwith "Input sequence too long"
+    else
+      let pad = Stdlib.Array.make pad_size 0 in
+      Array.concat
+        [
+          Stdlib.Array.make 1 start_token_id;
+          tokens;
+          Stdlib.Array.make 1 end_token_id;
+          pad;
+        ]
+
   let encode (model : Tfjs.model) tokenizer sentences =
+    (* Tokenize *)
     let tokens_batch =
-      List.map sentences ~f:(fun s ->
-          Tokenizer.tokenize tokenizer s |> pad_to_max)
-      |> Array.of_list
+      List.map sentences ~f:(Tokenizer.tokenize tokenizer) |> Array.of_list
     in
+    (* Pad to longest sequence *)
+    let lengths = Array.map tokens_batch ~f:Array.length in
+    let max_length =
+      lengths |> Array.max_elt ~compare:Int.compare |> Option.value_exn
+    in
+    let tokens_batch = Array.map tokens_batch ~f:(pad_tokens ~max_length) in
+
+    (* Create tensors *)
     let input_ids, token_type_ids, attention_mask =
       create_tensors tokens_batch
     in
@@ -84,6 +90,7 @@ end = struct
           ("attention_mask", Js.Unsafe.inject attention_mask);
         |]
     in
+    (* Predict *)
     let output =
       Js.Unsafe.meth_call (Js.Unsafe.inject model) "predict"
         [| Js.Unsafe.inject inputs |]
