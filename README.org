@@ -2,10 +2,22 @@
 
 OCaml + [[https://github.com/ocsigen/js_of_ocaml][js_of_ocaml]] + [[https://www.sbert.net/][SBERT]] + [[https://www.tensorflow.org/js/][TensorFlow.js]].
 
-* Requirements
-- opam
-- yarn
-- python
+This project converts a SBERT model from PyTorch to TensorFlow to TensorFlow.js, and loads that model in OCaml code transpiled to JavaScript. The test code runs it under Node.js, but this can run in the browser as well (with pure JS, WASM, WebGL or WebGPU TensorFlow.js backend).
+
+Why? If you need semantic text embeddings in a =js_of_ocaml= project, this is one of the easiest ways to do so.
+
+If you're interested in running your code natively and don't want anything to do with JavaScript, this is not for you.
+
+This package internally uses =require()= (for TensorFlow.js, the BERT
+tokenizer...), so make sure that the dependencies described in =package.json= /
+=yarn.lock= are available at runtime.
+
+* System requirements
+Versions indicated are what I used, not hard requirements.
+
+- opam: 2.1.5
+- yarn: 1.22.19
+- python: 3.11.3
 
 * Usage
 ** Set up
@@ -32,6 +44,13 @@ opam install . --deps-only --yes --with-test
 # in semsearch-jsoo
 dune test
 #+end_src
+
+* Possible improvements
+- Pure-OCaml BERT tokenizer: would drop an unnecessary JS dependency.
+- Bind to [[https://github.com/huggingface/candle][huggingface/candle]], which can target WASM, and has support for BERT.
+  This would remove the need for the ugly Torch -> TF -> TFJS conversion.
+  It also has the benefit of enabling portability to native code, though that would require binding twice (once through FFI, once through JSOO).
+- Approximate Nearest Neighbor search algorithms instead of a linear search.
 
 * Acknowledgements
 Thanks to Philipp Schmid for [[https://www.philschmid.de/tensorflow-sentence-transformers][his article on converting Sentence Transformers to TensorFlow]].
