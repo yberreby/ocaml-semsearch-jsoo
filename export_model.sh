@@ -4,9 +4,15 @@ set -v
 
 cd to-tfjs
 
-python -m venv env
+if [ ! -d "env" ]; then
+    python -m venv env
+fi
+
 source env/bin/activate
-pip install -r requirements.txt
+
+if [ ! -d "env" ]; then
+    pip install -r requirements.txt
+fi
 
 python export.py \
     --model-id "sentence-transformers/all-MiniLM-L6-v2" \
