@@ -51,10 +51,12 @@ dune test
 * Caveats
 - The embedding dimension cannot be configured at runtime for now.
 - The tokenizer is fixed, relies on [[https://www.npmjs.com/package/bert-tokenizer][bert-tokenizer (npm)]]
+  - Hasn't been tested beyond ASCII text.
 - The vector search is linear.
 
 * Possible / future improvements
 - Generally cleaning up the code
+- =dune-project= needs proper dependency specifications.
 - JS bindings:
   - =brr=?
   - [[https://github.com/LexiFi/gen_js_api][LexiFi/gen_js_api]]?
