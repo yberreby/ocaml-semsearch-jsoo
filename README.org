@@ -29,6 +29,7 @@ Versions indicated are what I used, not hard requirements.
 
 # Install Node dependencies
 yarn install --ignore-optional
+yarn add -O @tensorflow/tfjs-backend-wasm
 
 # Set up opam switch
 opam switch create . ocaml.4.14.1 --no-install --yes
@@ -43,15 +44,18 @@ opam install . --deps-only --yes --with-test
 
 ** Try it out
 #+begin_src bash
-yarn add -O @tensorflow/tfjs-backend-wasm
-cd semsearch-jsoo
+# in semsearch-jsoo
 dune test
 #+end_src
 
+* Caveats
+- The embedding dimension cannot be configured at runtime for now.
+- Vector search is linear.
+
 * Possible / future improvements
+- Generally cleaning up the code
 - Documentation
 - =Makefile=
-- Make the embedding dimension configurable
 - Allow loading models from IndexedDB
 - Pure-OCaml BERT tokenizer: would drop an unnecessary JS dependency.
 - Bind to [[https://github.com/huggingface/candle][huggingface/candle]], which can target WASM, and has support for BERT.
