@@ -50,7 +50,8 @@ dune test
 
 * Caveats
 - The embedding dimension cannot be configured at runtime for now.
-- Vector search is linear.
+- The tokenizer is fixed, relies on [[https://www.npmjs.com/package/bert-tokenizer][bert-tokenizer (npm)]]
+- The vector search is linear.
 
 * Possible / future improvements
 - Generally cleaning up the code
