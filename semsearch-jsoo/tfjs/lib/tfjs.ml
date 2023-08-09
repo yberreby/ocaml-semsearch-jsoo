@@ -75,7 +75,7 @@ module IO = struct
     let constr = Js.Unsafe.js_expr "LocalFSHandler" in
     new%js constr (path |> Js.string |> Js.Unsafe.inject)
 
-  let fileSystem path =
+  let tfn_fs_handler path =
     Js.Unsafe.fun_call
       (Lazy.force tfn)##.io##.fileSystem
       [| path |> Js.string |> Js.Unsafe.inject |]
