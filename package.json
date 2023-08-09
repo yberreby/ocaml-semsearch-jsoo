@@ -1,7 +1,12 @@
 {
   "dependencies": {
-    "@tensorflow/tfjs": "^4.9.0",
-    "@tensorflow/tfjs-node": "^4.9.0",
+    "@tensorflow/tfjs": "^4.10.0",
+    "@tensorflow/tfjs-core": "4.10.0",
     "bert-tokenizer": "^1.1.8"
+  },
+  "optionalDependencies": {
+    "@tensorflow/tfjs-backend-wasm": "^4.10.0",
+    "@tensorflow/tfjs-backend-webgpu": "^4.10.0",
+    "@tensorflow/tfjs-node": "^4.10.0"
   }
 }

@@ -9,15 +9,17 @@ Why? If you need semantic text embeddings in a =js_of_ocaml= project, this is on
 If you're interested in running your code natively and don't want anything to do with JavaScript, this is not for you.
 
 This package internally uses =require()= (for TensorFlow.js, the BERT
-tokenizer...), so make sure that the dependencies described in =package.json= /
-=yarn.lock= are available at runtime.
+tokenizer...), so make sure that the dependencies described in =package.json= are available at runtime, including any optional dependencies corresponding to your desired TF.js backend.
 
 * System requirements
 Versions indicated are what I used, not hard requirements.
 
 - opam: 2.1.5
 - yarn: 1.22.19
-- python: 3.11.3
+- Python: 3.11.3
+
+* Supported TF.js backends
+=cpu=, =node= and =wasm= were tested. Others should work as well, but may require changes.
 
 * Usage
 ** Set up
@@ -26,7 +28,7 @@ Versions indicated are what I used, not hard requirements.
 ./export_model.sh
 
 # Install Node dependencies
-yarn
+yarn install --ignore-optional
 
 # Set up opam switch
 opam switch create . ocaml.4.14.1 --no-install --yes
@@ -41,11 +43,15 @@ opam install . --deps-only --yes --with-test
 
 ** Try it out
 #+begin_src bash
-# in semsearch-jsoo
+yarn add -O @tensorflow/tfjs-backend-wasm
+cd semsearch-jsoo
 dune test
 #+end_src
 
 * Possible improvements
+- [ ] Documentation
+- =Makefile=
+- OCaml: make the model easily swappable
 - Pure-OCaml BERT tokenizer: would drop an unnecessary JS dependency.
 - Bind to [[https://github.com/huggingface/candle][huggingface/candle]], which can target WASM, and has support for BERT.
   This would remove the need for the ugly Torch -> TF -> TFJS conversion.
