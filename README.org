@@ -54,6 +54,7 @@ dune test
 
 * Possible / future improvements
 - Generally cleaning up the code
+- Consider =brr= for JS bindings
 - Documentation
 - =Makefile=
 - Allow loading models from IndexedDB
