@@ -54,7 +54,9 @@ dune test
 
 * Possible / future improvements
 - Generally cleaning up the code
-- Consider =brr= for JS bindings
+- JS bindings:
+  - =brr=?
+  - [[https://github.com/LexiFi/gen_js_api][LexiFi/gen_js_api]]?
 - Documentation
 - =Makefile=
 - Allow loading models from IndexedDB
