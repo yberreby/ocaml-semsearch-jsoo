@@ -11,7 +11,6 @@ let root = test_root ^ "../../../../../"
 let vocab = root ^ "node_modules/bert-tokenizer/assets/vocab.json"
 let exported_path = root ^ "exported/"
 let tfjs_path = exported_path ^ "js/" ^ "sentence-transformers-" ^ sbert_model
-let json_path = tfjs_path ^ "/model.json"
 
 (* Load list of lines, stripped of whitespace *)
 let sentences : string List.t =
@@ -42,12 +41,15 @@ let test_queries =
     "Python";
     "stressful";
     "activities good for my mental health";
+    "war";
+    "CEO";
   ]
+
+let cur_s = Unix.gettimeofday
 
 let f () =
   let backend = Tfjs.Backend.Wasm in
   let%lwt () = Tfjs.Backend.set backend in
-  let cur_s = Unix.gettimeofday in
   let start = cur_s () in
   let handler = tfjs_path |> Tfjs.IO.local_fs_handler in
   let%lwt model = Tfjs.load_graph_model handler in
@@ -63,24 +65,24 @@ let f () =
       Sbert_jsoo.SBERT.encode model tokenizer [ base_sentence ]
     in
     Fmt.pr "Encoded \"%s\" in %.3fs\n" base_sentence (cur_s () -. start);
-    Fmt.pr "\nQuery: %s; top matches:\n" base_sentence;
     let start_search = cur_s () in
     let similarities =
       Semsearch_jsoo.calculate_similarities_with_base base_encoded
         encoded_sentences
     in
+    let end_search = cur_s () in
+    Fmt.pr " Top matches (found in %.3fs):\n" (end_search -. start_search);
     let sentences = Array.of_list sentences in
     List.iter
       (fun (i, similarity) ->
-        Fmt.pr " '%s' with similarity %.2f\n" sentences.(i) similarity)
-      (top_n 3 similarities);
-    let end_search = cur_s () in
-    Fmt.pr "Searched in %.3fs\n" (end_search -. start_search)
+        Fmt.pr "  '%s' with similarity %.2f\n" sentences.(i) similarity)
+      (top_n 3 (similarities |> Array.to_list));
+    Fmt.pr "@."
   in
   Base.List.iter test_queries ~f:find_with_query;
   Lwt.return_unit
 
 let () =
-  Fmt.pr "Running under JSOO\n";
+  Fmt.pr "Running under JSOO@.";
   Lwt.async f;
   ()

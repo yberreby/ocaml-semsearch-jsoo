@@ -48,10 +48,11 @@ cd semsearch-jsoo
 dune test
 #+end_src
 
-* Possible improvements
-- [ ] Documentation
+* Possible / future improvements
+- Documentation
 - =Makefile=
-- OCaml: make the model easily swappable
+- Make the embedding dimension configurable
+- Allow loading models from IndexedDB
 - Pure-OCaml BERT tokenizer: would drop an unnecessary JS dependency.
 - Bind to [[https://github.com/huggingface/candle][huggingface/candle]], which can target WASM, and has support for BERT.
   This would remove the need for the ugly Torch -> TF -> TFJS conversion.
