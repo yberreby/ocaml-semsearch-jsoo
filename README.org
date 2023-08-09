@@ -19,7 +19,7 @@ Versions indicated are what I used, not hard requirements.
 - Python: 3.11.3
 
 * Supported TF.js backends
-=cpu=, =node= and =wasm= were tested. Others should work as well, but may require changes.
+=cpu=, =tensorflow= and =wasm= were tested. Others should work as well, but may require changes.
 
 * Usage
 ** Set up
