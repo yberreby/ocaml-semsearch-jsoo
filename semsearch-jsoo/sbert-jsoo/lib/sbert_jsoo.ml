@@ -13,16 +13,19 @@ module SBERT : sig
 end = struct
   let start_token_id = 101
   let end_token_id = 102
+  let embedding_dim = 384
 
   module Tokenizer = struct
     type t = Js.Unsafe.any
 
-    let bertTokenizer =
+    let bert_tokenizer =
       lazy (Js.Unsafe.js_expr "require('bert-tokenizer').BertTokenizer")
 
     let with_vocab vocabUrl =
-      let x = Lazy.force bertTokenizer in
-      new%js x (Js.Unsafe.inject vocabUrl) (Js.Unsafe.inject (Js.bool true))
+      let constr = Lazy.force bert_tokenizer in
+      new%js constr
+        (Js.Unsafe.inject vocabUrl)
+        (Js.Unsafe.inject (Js.bool true))
 
     let tokenize tokenizer input : int Array.t =
       Js.Unsafe.meth_call tokenizer "tokenize"
@@ -77,7 +80,6 @@ end = struct
       lengths |> Array.max_elt ~compare:Int.compare |> Option.value_exn
     in
     let tokens_batch = Array.map tokens_batch ~f:(pad_tokens ~max_length) in
-
     (* Create tensors *)
     let input_ids, token_type_ids, attention_mask =
       create_tensors tokens_batch
@@ -95,5 +97,5 @@ end = struct
       Js.Unsafe.meth_call (Js.Unsafe.inject model) "predict"
         [| Js.Unsafe.inject inputs |]
     in
-    Tfjs.reshape output [| -1; 384 |]
+    Tfjs.reshape output [| -1; embedding_dim |]
 end
