@@ -45,4 +45,4 @@ class LocalFSHandler {
   }
 }
 
-global.LocalFSHandler = LocalFSHandler;
+globalThis.LocalFSHandler = LocalFSHandler;
