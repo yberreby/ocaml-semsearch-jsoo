@@ -14,7 +14,7 @@ if [ ! -d "env" ]; then
     pip install -r requirements.txt
 fi
 
-MODEL_ID=${1:-"paraphrase-MiniLM-L3-v2"}
+MODEL_ID=${1:-"all-MiniLM-L6-v2"}
 
 python export.py \
     --out-dir ../exported \
