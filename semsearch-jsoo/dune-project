@@ -24,7 +24,6 @@
  (depends
   (ocaml
    (>= 4.14.1))
-    owl
     base
     fmt
     lwt_ppx
@@ -39,7 +38,6 @@
  (depends
   (ocaml
    (>= 4.14.1))
-    owl
     base
     fmt
     lwt_ppx
