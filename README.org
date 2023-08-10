@@ -72,3 +72,19 @@ dune test
 * Acknowledgements
 Thanks to Philipp Schmid for [[https://www.philschmid.de/tensorflow-sentence-transformers][his article on converting Sentence Transformers to TensorFlow]].
 
+
+
+* Citation
+
+If you've used this software in a scientific publication, please cite it as follows:
+
+#+begin_src bibtex
+@software{BERREBY_ocaml-semsearch-jsoo_2023,
+    author = {BERREBY, Yohaï-Eliel},
+    month = aug,
+    title = {{ocaml-semsearch-jsoo}},
+    url = {https://github.com/yberreby/ocaml-semsearch-jsoo},
+    version = {0.0.1},
+    year = {2023}
+}
+#+end_src
