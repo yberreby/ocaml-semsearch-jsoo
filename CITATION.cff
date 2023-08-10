@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "BERREBY"
+  given-names: "Yohaï-Eliel"
+  orcid: "https://orcid.org/0009-0001-7091-9093"
+title: "ocaml-semsearch-jsoo"
+version: 0.0.1
+date-released: 2023-08-10
+url: "https://github.com/yberreby/ocaml-semsearch-jsoo"
