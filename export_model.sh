@@ -1,16 +1,19 @@
 #!/bin/bash
 
-set -v
+set -ve
 
 cd to-tfjs
 
-if [ ! -d "env" ]; then
+env_exists=0
+if [ -d "env" ]; then
+    env_exists=1
+else
     python -m venv env
 fi
 
 source env/bin/activate
 
-if [ ! -d "env" ]; then
+if [ $env_exists -eq 0 ]; then
     pip install -r requirements.txt
 fi
 
