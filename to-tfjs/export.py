@@ -5,6 +5,11 @@ from transformers import AutoTokenizer
 from model import TFSentenceTransformer
 import tensorflow as tf
 
+print("TensorFlow version:", tf.__version__)
+
+# Disable GPU support explicitly
+tf.config.set_visible_devices([], "GPU")
+
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--model-id",
